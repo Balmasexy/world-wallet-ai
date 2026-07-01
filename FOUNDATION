@@ -1,3 +1,27 @@
+Protect the main branch:
+Require pull requests
+Require passing CI
+Require code review (even if you're the only developer, review your own PR before merging)
+Protect release tags
+Project boards
+Create these GitHub labels:
+
+epic
+feature
+bug
+documentation
+backend
+frontend
+wallet
+ai
+security
+deployment
+good first issue
+Phase 1 – Foundation
+Goal: A working application that starts successfully.
+Sprint 1
+Repository bootstrap
+
 React
 
 FastAPI
@@ -9,3 +33,255 @@ PostgreSQL
 Redis
 
 GitHub Actions
+Release
+
+v0.1.0-alpha
+Phase 2 – Authentication
+Sprint 2
+
+Login
+
+Registration
+
+JWT
+
+User Profile
+
+Protected Routes
+Release
+
+v0.2.0
+Phase 3 – Wallet
+Instead of writing wallet cryptography yourself, create a Wallet Adapter.
+
+Wallet UI
+
+↓
+
+Wallet Service
+
+↓
+
+Wallet Adapter
+
+↓
+
+Open-source Wallet Engine
+This lets you change the underlying engine later without rewriting the application.
+Release
+
+v0.3.0
+Phase 4 – AI
+This becomes your differentiator.
+
+AI Assistant
+
+↓
+
+Wallet Analysis
+
+↓
+
+Portfolio Summary
+
+↓
+
+Security Advice
+
+↓
+
+Natural Language Search
+Release
+
+v0.4.0
+Phase 5 – Dashboard
+Build the complete user experience.
+
+Dashboard
+
+Wallet
+
+Portfolio
+
+Transactions
+
+Notifications
+
+Settings
+Release
+
+v0.5.0
+Phase 6 – Production
+Only after the MVP works:
+
+Docker
+
+↓
+
+GitHub Actions
+
+↓
+
+Kubernetes
+
+↓
+
+Production
+Release
+
+v1.0.0
+Git Workflow
+Never commit directly to main.
+
+main
+
+↓
+
+develop
+
+↓
+
+feature/auth
+
+↓
+
+feature/wallet
+
+↓
+
+feature/ai
+Each feature:
+
+Feature Branch
+
+↓
+
+Pull Request
+
+↓
+
+Tests
+
+↓
+
+Review
+
+↓
+
+Merge
+Directory Structure
+
+world-wallet-ai/
+│
+├── apps/
+│   ├── web/
+│   └── admin/
+│
+├── services/
+│   ├── api-gateway/
+│   ├── auth/
+│   ├── wallet/
+│   ├── portfolio/
+│   ├── ai/
+│   ├── notifications/
+│   └── audit/
+│
+├── packages/
+│   ├── wallet-adapter/
+│   ├── ui/
+│   ├── shared/
+│   └── api-client/
+│
+├── infrastructure/
+│
+├── docs/
+│
+└── tests/
+Testing Strategy
+Every module includes:
+Unit tests
+Integration tests
+API tests
+Before merging:
+
+Lint
+
+↓
+
+Unit Tests
+
+↓
+
+Integration Tests
+
+↓
+
+Build
+
+↓
+
+Docker Build
+Documentation
+Keep documentation alongside development:
+
+docs/
+
+Architecture
+
+API
+
+Deployment
+
+Database
+
+AI
+
+Wallet
+Update docs as part of the same pull request that changes the code.
+Release Cycle
+
+v0.1
+
+↓
+
+v0.2
+
+↓
+
+v0.3
+
+↓
+
+v0.4
+
+↓
+
+v0.5
+
+↓
+
+v1.0
+Every release should be deployable.
+Long-Term Architecture
+
+React
+
+↓
+
+FastAPI
+
+↓
+
+Wallet Service
+
+↓
+
+Wallet Adapter
+
+↓
+
+Wallet Engine
+
+↓
+
+Blockchain
