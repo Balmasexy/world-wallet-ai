@@ -1,13 +1,25 @@
 # Web Frontend
 
-React-based frontend application for World Wallet AI.
+React + Vite frontend application for World Wallet AI.
 
 ## Setup
 
 ```bash
 cd apps/web
 npm install
-npm start
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Preview
+
+```bash
+npm run preview
 ```
 
 ## Development
