@@ -1,22 +1,20 @@
-import { useState } from 'react'
-import './App.css'
+import { useEffect, useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [status, setStatus] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:8000/")
+      .then((res) => res.json())
+      .then((data) => setStatus(data.status));
+  }, []);
 
   return (
-    <>
-      <div>
-        <h1>World Wallet AI</h1>
-        <p>Welcome to the World Wallet AI Platform</p>
-      </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-    </>
-  )
+    <div style={{ padding: 40 }}>
+      <h1>World Wallet AI</h1>
+      <p>Backend Status: {status}</p>
+    </div>
+  );
 }
 
-export default App
+export default App;
